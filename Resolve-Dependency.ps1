@@ -207,6 +207,7 @@ if (-not $powerShellGetModule -and -not $nuGetProvider)
         {
             $providerBootstrapParameters.Add('AllowPrerelease', $AllowPrerelease)
         }
+
     }
 
     if ($AllowPrerelease)
@@ -315,9 +316,8 @@ try
             'AllowPrerelease'
             {
                 $installPowerShellGetParameters.Add('AllowPrerelease', $AllowPrerelease)
-            }
         }
-
+    }
         Write-Progress -Activity 'Bootstrap:' -PercentComplete 60 -CurrentOperation 'Installing newer version of PowerShellGet'
 
         Install-Module @installPowerShellGetParameters
